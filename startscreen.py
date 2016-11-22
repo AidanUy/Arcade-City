@@ -3,19 +3,20 @@ pygame.init()
 
 class startScreen:
 
-
     def __init__(self):
         size = [800, 600]
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-
         black = (0, 0, 0)
         white = (255, 255, 255)
-        orange = (250, 105, 0)
-        green = (0, 200, 0)
+        red = (255, 0, 0)
+        green = (0, 255, 0)
+        blue = (0, 0, 255)
 
+        orange = (250, 105, 0)
         bright_orange = (255, 130, 0)
+        green = (0, 200, 0)
         bright_green = (0, 255, 0)
 
         # Loop until the user clicks the close button
@@ -74,7 +75,3 @@ def main():
     startScreen()
 
 main()
-
-
-
-#TESTING GITHUB FOR AIDAN
