@@ -40,13 +40,7 @@ class rockPaperScissors:
             smallText = pygame.font.SysFont('Showcard Gothic', 20)
             midText = pygame.font.SysFont('Showcard Gothic', 30)
 
-            from random import randint
 
-            #create a list of play options
-            t = ["Rock", "Paper", "Scissors"]
-
-            #assign a random play to the computer
-            computer = t[randint(0,2)]
 
             names = subText.render("Rock, Paper, or Scissors?", True, white)
             screen.blit(names, [80, 100])
@@ -57,17 +51,8 @@ class rockPaperScissors:
             if 280 > mouse[0] > 130 and 500 > mouse[1] > 450:
                 pygame.draw.rect(screen, bright_green, (130,450,150,50))
                 if leftclick == 1:
-                    pygame.draw.rect(screen, black, (0, 260, 800, 40))
-                    player = "Rock"
-                    if player == computer:
-                        cs = midText.render("Tie!", True, white)
-                        pygame.draw.rect(screen, white, (130, 450, 150, 50))#Not yet functional
-                    if computer == "Paper":
-                        cs = midText.render("You lose! Paper covers rock.", True, white)
-                        pygame.draw.rect(screen, red, (130, 450, 150, 50))#Not yet functional
-                    else:
-                        cs = midText.render("You win! Rock smashes scissors.", True, white)
-                    screen.blit(cs, [165, 260])
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        from rockpaperscissorsrock.py import rockPaperScissorsRock
 
             else:
                 pygame.draw.rect(screen, green, (130, 450, 150, 50))
@@ -76,17 +61,7 @@ class rockPaperScissors:
                 pygame.draw.rect(screen, bright_green, (330, 450, 150, 50))
                 if leftclick == 1:
                     if event.type == pygame.MOUSEBUTTONDOWN:
-                        pygame.draw.rect(screen, black, (0, 260, 800, 40))
-                        player = "Paper"
-                        if player == computer:
-                            cs = midText.render("Tie!", True, white)
-                            pygame.draw.rect(screen, white, (330, 450, 150, 50))#Not yet functional
-                        if computer == "Scissors":
-                            cs = midText.render("You lose! Scissors cuts paper.", True, white)
-                            pygame.draw.rect(screen, red, (330, 450, 150, 50))#Not yet functional
-                        else:
-                            cs = midText.render("You win! Paper covers rock.", True, white)
-                        screen.blit(cs, [165, 260])
+                        from rockpaperscissorspaper.py import rockPaperScissorsPaper
             else:
                 pygame.draw.rect(screen, green, (330, 450, 150, 50))
 
@@ -94,17 +69,7 @@ class rockPaperScissors:
                 pygame.draw.rect(screen, bright_green, (530, 450, 150, 50))
                 if leftclick == 1:
                     if event.type == pygame.MOUSEBUTTONDOWN:
-                        pygame.draw.rect(screen, black, (0, 260, 800, 40))
-                        player = "Scissors"
-                        if player == computer:
-                            cs = midText.render("Tie!", True, white)
-                        if computer == "Rock":
-                            cs = midText.render("You lose! Rock smashes scissors.", True, white)
-                            pygame.draw.rect(screen, white, (530, 450, 150, 50))#Not yet functional
-                        else:
-                            cs = midText.render("You win! Scissors cuts paper.", True, white)
-                            pygame.draw.rect(screen, red, (530, 450, 150, 50))#Not yet functional
-                        screen.blit(cs, [165, 260])
+                        from rockpaperscissorsscissors.py import rockPaperScissorsScissors
             else:
                 pygame.draw.rect(screen, green, (530, 450, 150, 50))
 
