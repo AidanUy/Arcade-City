@@ -26,8 +26,12 @@ class instructionScreen:
         clock = pygame.time.Clock()
 
         # Set black background and import caption image
-        screen.fill(black)
+        background = pygame.image.load("background.png").convert()
+        screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
+        oak = pygame.image.load("oak.png").convert()
+        oak.set_colorkey(black)
+        screen.blit(oak, [570, 130])
 
         # -------- Main Program Loop -----------
         while not done:
