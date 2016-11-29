@@ -4,13 +4,15 @@ import sys
 class Screen():
 	def __init__(self):
 		size = [800, 600]
-		pygame.display.set_mode(size)
+		screen = pygame.display.set_mode(size)
 		pygame.display.set_caption("Arcade City")
 
-		self.imagereference = ""
-		background = pygame.image.load(self.imagereference).convert()
-		#i don't know if you can refer to self.imagereference like that, but this is the logic behind it. also why couldn't you?
-		screen.blit(background, [0,0])
+		self.background1 = pygame.image.load("imagetest.jpg").convert()
+		#self.background2 = pygame.image.load("
+
+		#background = pygame.image.load(self.imagereference).convert()
+		#referring to self.imageref inside background does not work because self.imagereference is currently blank
+		screen.blit(background1,[0,0])
 		clock = pygame.time.Clock()
 		clock.tick(60)
 
