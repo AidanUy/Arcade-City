@@ -45,6 +45,8 @@ class rockPaperScissorsPaper:
                     pygame.quit()
                     done = True # Flag that we are done so we exit this loop
 
+ 
+
                     
             subText = pygame.font.SysFont('Showcard Gothic', 50)
             smallText = pygame.font.SysFont('Showcard Gothic', 20)
@@ -59,6 +61,19 @@ class rockPaperScissorsPaper:
                 cs = midText.render("You win! Paper covers rock.", True, white)
 
             screen.blit(cs, [165, 260])
+
+
+            mouse = pygame.mouse.get_pos()
+            if 493 > mouse[0] > 343 and 461 > mouse[1] > 411:
+                pygame.draw.rect(screen, bright_green, (343, 411, 150, 50))
+            else:
+                pygame.draw.rect(screen, green, (343, 411, 150, 50))
+
+
+            if 494 > mouse[0] > 343 and 461 > mouse[1] > 411:
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    from rockpaperscissors.py import rockPaperScissors
+
 
             pygame.display.update()
 
