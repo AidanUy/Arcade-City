@@ -1,8 +1,8 @@
-import pygame
+import pygame, os, sys
 pygame.init()
 
 class rockPaperScissorsScissors:
-    
+
     def __init__(self):
         size = [800, 600]
         screen = pygame.display.set_mode(size)
@@ -10,14 +10,19 @@ class rockPaperScissorsScissors:
 
         black = (0, 0, 0)
         white = (255, 255, 255)
-        red = (255, 0, 0)
-        green = (0, 255, 0)
-        blue = (0, 0, 255)
 
-        orange = (250, 105, 0)
-        bright_orange = (255, 130, 0)
+        red = (200, 0, 0)
+        bright_red = (255, 0, 0)
+
         green = (0, 200, 0)
         bright_green = (0, 255, 0)
+
+        blue = (0, 0, 200)
+        bright_blue = (0, 0, 255)
+
+        done = False
+
+        clock = pygame.time.Clock()
 
         from random import randint
 
@@ -27,32 +32,22 @@ class rockPaperScissorsScissors:
         #assign a random play to the computer
         computer = t[randint(0,2)]
 
-
-        # Loop until the user clicks the close button
         done = False
 
-        # Used to manage how fast the screen updates
         clock = pygame.time.Clock()
 
-        # Set black background
         screen.fill(black)
 
-        # -------- Main Program Loop -----------
         while not done:
-            # --- Main event loop
-            for event in pygame.event.get(): # User did something
-                if event.type == pygame.QUIT: # If user clicked close
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
                     pygame.quit()
-                    done = True # Flag that we are done so we exit this loop
-
-
-
+                    done = True
 
             subText = pygame.font.SysFont('Showcard Gothic', 50)
             smallText = pygame.font.SysFont('Showcard Gothic', 20)
             midText = pygame.font.SysFont('Showcard Gothic', 30)
 
-            
             player = "Scissors"
             if computer == "Scissors":
                 cs = midText.render("Tie!", True, white)
@@ -69,12 +64,13 @@ class rockPaperScissorsScissors:
             else:
                 pygame.draw.rect(screen, green, (343, 411, 150, 50))
 
-
             if 494 > mouse[0] > 343 and 461 > mouse[1] > 411:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     from rockpaperscissors.py import rockPaperScissors
-        
+
             pygame.display.update()
+
+            clock.tick(60)
 
 def main():
     rockPaperScissorsScissors()

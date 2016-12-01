@@ -1,4 +1,4 @@
-import pygame
+import pygame, os, sys
 pygame.init()
 
 class instructionScreen:
@@ -10,22 +10,20 @@ class instructionScreen:
 
         black = (0, 0, 0)
         white = (255, 255, 255)
-        red = (255, 0, 0)
-        green = (0, 255, 0)
-        blue = (0, 0, 255)
 
-        orange = (250, 105, 0)
-        bright_orange = (255, 130, 0)
+        red = (200, 0, 0)
+        bright_red = (255, 0, 0)
+
         green = (0, 200, 0)
         bright_green = (0, 255, 0)
 
-        # Loop until the user clicks the close button
+        blue = (0, 0, 200)
+        bright_blue = (0, 0, 255)
+
         done = False
 
-        # Used to manage how fast the screen updates
         clock = pygame.time.Clock()
 
-        # Set black background and import caption image
         background = pygame.image.load("background.png").convert()
         screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
@@ -33,13 +31,11 @@ class instructionScreen:
         oak.set_colorkey(black)
         screen.blit(oak, [570, 130])
 
-        # -------- Main Program Loop -----------
         while not done:
-            # --- Main event loop
-            for event in pygame.event.get(): # User did something
-                if event.type == pygame.QUIT: # If user clicked close
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
                     pygame.quit()
-                    done = True # Flag that we are done so we exit this loop
+                    done = True
 
             titleText = pygame.font.SysFont('Showcard Gothic', 60)
 
@@ -67,6 +63,8 @@ class instructionScreen:
                     from gamescreen.py import gamescreen
 
             pygame.display.update()
+
+            clock.tick(60)
 
 def main():
     instructionScreen()

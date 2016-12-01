@@ -1,3 +1,6 @@
+import pygame, os, sys
+pygame.init()
+
 class TicTacToeGame:
 	def __init__(self):
 		self.winning_combos(

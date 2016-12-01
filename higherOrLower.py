@@ -1,7 +1,5 @@
-import pygame
-import random
+import pygame, os, sys, random
 pygame.init()
-
 
 class higherOrLower:
 
@@ -9,25 +7,27 @@ class higherOrLower:
     screen = pygame.display.set_mode(size)
     pygame.display.set_caption("Arcade City")
 
+    black = (0, 0, 0)
+    white = (255, 255, 255)
 
-    BLACK    = (   0,   0,   0)
-    WHITE    = ( 255, 255, 255)
+    red = (200, 0, 0)
+    bright_red = (255, 0, 0)
 
+    green = (0, 200, 0)
+    bright_green = (0, 255, 0)
 
-  # Loop until the user clicks the close button.
+    blue = (0, 0, 200)
+    bright_blue = (0, 0, 255)
+
     done = False
 
-  # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
 
-  # -------- Main Program Loop -----------
     while not done:
-      # --- Main event loop
-        for event in pygame.event.get(): # User did something
-              if event.type == pygame.QUIT: # If user clicked close
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
                 pygame.quit()
-                done = True # Flag that we are done so we exit this loop
-
+                done = True
 
     def __init__(self):
         self.wins = 0

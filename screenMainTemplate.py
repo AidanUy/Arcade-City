@@ -1,7 +1,5 @@
 import pygame, os, sys
 pygame.init()
-from buttonClass import button
-from spriteClass import gameSprite
 
 def main():
     size = [800, 600]
@@ -24,26 +22,14 @@ def main():
 
     clock = pygame.time.Clock()
 
-    character = gameSprite()
-
     while not done:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 done = True
 
-        screen.fill(black)
-
-        myButton = button(screen, green, red, 100, 200, 100, 70)
-
-        if myButton.rect.colliderect(character):
-            print("COLLISION")
-
-        character.update()
-        character.draw(screen)
+        # ---------CODE GOES HERE---------
 
         pygame.display.update()
 
         clock.tick(60)
-
-main()
