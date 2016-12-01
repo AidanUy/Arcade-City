@@ -1,5 +1,5 @@
 import pygame, os, sys
-pygame.init()
+
 
 class button():
 
@@ -11,9 +11,9 @@ class button():
 		self.color = color
 		self.bright_color = bright_color
 
-		mouse = pygame.mouse.get_pos()
+		self.mouse = pygame.mouse.get_pos()
 
-		if (self.x + self.width) > mouse[0] > self.x and (self.y + self.height) > mouse[1] > self.y:
+		if (self.x + self.width) > self.mouse[0] > self.x and (self.y + self.height) > self.mouse[1] > self.y:
 			self.rect = pygame.draw.rect(screen, self.bright_color, (self.x, self.y, self.width, self.height))
 		else:
 			self.rect = pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
