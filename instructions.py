@@ -38,8 +38,13 @@ class instructionScreen:
                     done = True
 
             titleText = pygame.font.SysFont('Showcard Gothic', 60)
+            subText = pygame.font.SysFont('Showcard Gothic', 25)
 
             text = titleText.render("Instructions", True, white)
+            captionText = subText.render("Hey! Welcome to Arcade City! Start by walking up", True, black)
+            captionText2 = subText.render("to and playing Higher or Lower and racking up", True, black)
+            captionText3 = subText.render("tickets. Then, when you get enough tickets,", True, black)
+            captionText4 = subText.render("different games will be unlocked. Have fun!", True, black)
 
             screen.blit(text, [200, 80])
 
@@ -54,6 +59,11 @@ class instructionScreen:
 
             screen.blit(caption, [3, 300])
             pygame.draw.rect(screen, white, (45, 320, 670, 110))
+
+            screen.blit(captionText, [45, 325])
+            screen.blit(captionText2, [45, 350])
+            screen.blit(captionText3, [45, 375])
+            screen.blit(captionText4, [45, 400])
 
             play = buttonText.render("Play!", True, white)
             screen.blit(play, [357, 515])
