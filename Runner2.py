@@ -24,26 +24,22 @@ class Game:
         screen.blit(text, [220, 200])
         screen.blit(cs, [310, 265])
         screen.blit(names, [150, 290])
-
+        #self.delete = 
         #mouse = pygame.mouse.get_pos()
 
-        """if 493 > mouse[0] > 343 and 461 > mouse[1] > 411:
-            pygame.draw.rect(screen, RED, (343, 411, 150, 50))
-        else:
-            pygame.draw.rect(screen, GREEN, (343, 411, 150, 50))
-
-        buttonText = pygame.font.SysFont('Showcard Gothic', 30)
-
-        start = buttonText.render("Start!", True, WHITE)
-        screen.blit(start, [365, 425])
-
-        #if 494 > mouse[0] > 343 and 461 > mouse[1] > 411:
-        #    if event.type == pygame.MOUSEBUTTONDOWN:
-        #        from instructions.py import instructionScreen"""
-	
+     
         
         pygame.display.update()
 
+
+
+    def instructionScreen(self, screen, sScreen):
+        pygame.display.init()
+        titleText = pygame.font.SysFont('Showcard Gothic', 60)
+        text = titleText.render("INSTRUCTIONS!", True, WHITE)
+        screen.blit(text, [200,400])
+        
+        pygame.display.update()
 
 def main():
     pygame.init()
@@ -70,9 +66,10 @@ def main():
         
             startButton = button(screen, GREEN, RED, 300, 400, 200, 100)
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                pos = startButton.mouse 
-                if startButton.rect.collidepoint(pos):
-                    print("no")  
+                pos1 = startButton.mouse 
+                if startButton.rect.collidepoint(pos1):
+                   sScreen.instructionScreen(screen,sScreen)
+                     
         		  
         pygame.display.update()
     clock.tick(60)		     
