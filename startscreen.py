@@ -1,6 +1,7 @@
 import pygame, os, sys
-pygame.init()
 
+pygame.init()
+from buttonclass import button
 class startScreen:
 
     def __init__(self):
@@ -35,6 +36,8 @@ class startScreen:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                
+                   
                     done = True
 
             titleText = pygame.font.SysFont('Showcard Gothic', 60)
@@ -48,19 +51,14 @@ class startScreen:
             screen.blit(cs, [310, 265])
             screen.blit(names, [150, 290])
 
-            mouse = pygame.mouse.get_pos()
-
-            if 493 > mouse[0] > 343 and 461 > mouse[1] > 411:
-                pygame.draw.rect(screen, bright_green, (343, 411, 150, 50))
-            else:
-                pygame.draw.rect(screen, green, (343, 411, 150, 50))
-
+            pos = pygame.mouse.get_pos()
+            startButton = button(screen, green, red, 350, 400, 150, 50)
+            
             buttonText = pygame.font.SysFont('Showcard Gothic', 30)
-
             start = buttonText.render("Start!", True, white)
-            screen.blit(start, [365, 425])
-
-            if 494 > mouse[0] > 343 and 461 > mouse[1] > 411:
+            screen.blit(start,[400,420])
+           
+            if 500 > pos[0] > 350 and 450 > pos[1] > 400:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     from instructions.py import instructionScreen
 
