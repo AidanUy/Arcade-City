@@ -21,7 +21,7 @@ class startScreen:
         blue = (0, 0, 200)
         bright_blue = (0, 0, 255)
 
-    
+
 
         clock = pygame.time.Clock()
 
@@ -36,13 +36,13 @@ class startScreen:
             for event in pygame.event.get():
              #   if event.type == pygame.QUIT:
              #      pygame.quit()
-                
-                   
+
+
               #      done = True
 
                 titleText = pygame.font.SysFont('Showcard Gothic', 60)
                 subText = pygame.font.SysFont('Showcard Gothic', 20)
- 
+
                 text = titleText.render("Arcade City", True, white)
                 cs = subText.render("CS110 Final Project", True, white)
                 names = subText.render("Aidan Uy, Crystal Low, Danika Gaviola, Dylan Pan", True, white)
@@ -52,12 +52,12 @@ class startScreen:
                 screen.blit(names, [150, 290])
 
                 pos = pygame.mouse.get_pos()
-                startButton = button(screen, green, red, 350, 400, 150, 50)
-            
+                startButton = button(screen, green, bright_green, 350, 400, 150, 50)
+
                 buttonText = pygame.font.SysFont('Showcard Gothic', 30)
                 start = buttonText.render("Start!", True, white)
-                screen.blit(start,[400,420])
-           
+                screen.blit(start, [373, 413])
+
             if 500 > pos[0] > 350 and 450 > pos[1] > 400:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     instructionScreen()
@@ -99,7 +99,7 @@ class instructionScreen:
 
         while not done:
             for event in pygame.event.get():
-               
+
 
                 titleText = pygame.font.SysFont('Showcard Gothic', 60)
                 subText = pygame.font.SysFont('Showcard Gothic', 25)
@@ -114,10 +114,7 @@ class instructionScreen:
 
                 mouse = pygame.mouse.get_pos()
 
-            if 480 > mouse[0] > 325 and 550 > mouse[1] > 500:
-                pygame.draw.rect(screen, bright_green, (325, 500, 150, 50))
-            else:
-                pygame.draw.rect(screen, green, (325, 500, 150, 50))
+            playButton = button(screen, green, bright_green, 325, 500, 155, 50)
 
             buttonText = pygame.font.SysFont('Showcard Gothic', 30)
 
@@ -147,12 +144,12 @@ def main():
     while not done:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                  
+
                    pygame.quit()
                    sys.exit()
-                   pygame.display.quit()   
-                
-                   
+                   pygame.display.quit()
+
+
                    done = True
 
 main()

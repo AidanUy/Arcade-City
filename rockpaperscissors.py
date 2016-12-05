@@ -46,7 +46,7 @@ class rockPaperScissors:
                 pygame.draw.rect(screen, bright_green, (130,450,150,50))
                 if leftclick == 1:
                     if event.type == pygame.MOUSEBUTTONDOWN:
-                        from rockpaperscissors.py import rockPaperScissorsRock
+                        from rockpaperscissorsrock.py import rockPaperScissorsRock
 
             else:
                 pygame.draw.rect(screen, green, (130, 450, 150, 50))
