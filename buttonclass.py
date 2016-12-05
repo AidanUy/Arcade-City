@@ -1,6 +1,5 @@
 import pygame, os, sys
 
-
 class button():
 
 	def __init__(self, screen, color, bright_color, x, y, width, height):
@@ -18,7 +17,3 @@ class button():
 		else:
 			self.rect = pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
 	
-	def text(self, text, size, location):
-		self.size = textsize
-		self.text = pygame.font.SysFont("Showcard Gothic", size)
-		
