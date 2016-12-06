@@ -20,21 +20,19 @@ def main():
            
             if event.type == pygame.MOUSEBUTTONDOWN:
                mouse1 = pygame.mouse.get_pos() 
-               startScreen()
+              
                #start.startButton      
                if 500 > mouse1[0] > 350 and 450 > mouse1[1] > 400:
-                   print("this button works")
-                 
+                   print("this start button works")                                                
                    instructionScreen()
-        
-                   pygame.display.update() 
-
-               if 475 > mouse1[0] > 325 and 550 > mouse1[1] > 500: 
-                  print(mouse1)
-                  print("this button also works")
+                   
+               elif 475 > mouse1[0] > 325 and 550 > mouse1[1] > 500: 
+                  #print(mouse1)
+                  print("this instructions button also works")
+                 
                   testScreen()
-                  
+          
                   pygame.display.update()
-                  
+            
         pygame.display.update()
 main()
