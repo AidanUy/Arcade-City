@@ -45,7 +45,7 @@ class higherOrLower:
         screen.blit(oak, [570, 130])
 
         done = False
-        while (wins < 3 and wins > -1 or done == True):
+        while (wins < 3 and wins > -1):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
