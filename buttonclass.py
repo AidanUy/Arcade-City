@@ -16,5 +16,10 @@ class button():
 			self.rect = pygame.draw.rect(screen, self.bright_color, (self.x, self.y, self.width, self.height))
 		else:
 			self.rect = pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
-	
- 
+			
+		#if self.width + self.x > self.mouse > self.x and self.height + self.y > self. mouse > self.y:
+			#if event.type == pygame.MOUSEBUTTONDOWN:
+				#from instructions import <--- WE WOULD NEED TO ADD A WHILE NOT DONE ON TOP IN ORDER
+				#TO MAKE IT SO THAT IT WORKS, but we would need to also find a way to make the FILE that we import
+				#code from and the CLASS that we are importing as general as possible so that we could replace
+				#them with each instance
