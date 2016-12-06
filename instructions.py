@@ -1,6 +1,4 @@
-import pygame
-import sys
-import os
+import pygame, os, sys
 from buttonclass import button
 pygame.init()
 
@@ -73,3 +71,8 @@ class instructionScreen:
             pygame.display.update()
 
             clock.tick(60)
+
+def main():
+    instructionScreen()
+
+main()
