@@ -17,3 +17,4 @@ class button():
 		else:
 			self.rect = pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
 	
+ 
