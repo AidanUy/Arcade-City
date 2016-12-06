@@ -1,6 +1,8 @@
-import pygame, os, sys
+import pygame
+import sys
+import os
 from buttonclass import button
-
+pygame.init()
 
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -16,6 +18,7 @@ bright_blue = (0, 0, 255)
 class instructionScreen:
 
     def __init__(self):
+        pygame.display.init()
 
 
         size = [800, 600]
@@ -23,7 +26,6 @@ class instructionScreen:
         pygame.display.set_caption("Arcade City")
 
  
-        done = False
 
         clock = pygame.time.Clock()
 
@@ -33,7 +35,8 @@ class instructionScreen:
         oak = pygame.image.load("oak.png").convert()
         oak.set_colorkey(black)
         screen.blit(oak, [570, 130])
-
+        
+        done = False
         while not done:
             for event in pygame.event.get():
               
@@ -47,14 +50,14 @@ class instructionScreen:
                 captionText4 = subText.render("different games will be unlocked. Have fun!", True, black)
 
                 screen.blit(text, [200, 80])
-            
+             
                 
                 playButton = button(screen, green, bright_green, 325, 500, 150, 50) 
                 playPos = playButton.mouse
 
                 buttonText = pygame.font.SysFont('Showcard Gothic', 30)
 
-                screen.blit(caption, [3, 300])
+                #screen.blit(caption, [3, 300])
                 pygame.draw.rect(screen, white, (45, 320, 670, 110))
 
                 screen.blit(captionText, [45, 325])
