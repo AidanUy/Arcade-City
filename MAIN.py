@@ -2,12 +2,14 @@ import pygame, os, sys
 from buttonclass import button
 from startscreen import startScreen
 from instructions import instructionScreen
+from testingscreen import testScreen
 pygame.init()
 
 def main():
     
     #instruction = instructionScreen()
-    startScreen()
+    start = startScreen()
+    
     done = False
     while not done:
         
@@ -16,19 +18,23 @@ def main():
                pygame.quit()
                done = True
            
-            if event.type == pygame.MOUSEBUTTONDOWN: 
+            if event.type == pygame.MOUSEBUTTONDOWN:
+               mouse1 = pygame.mouse.get_pos() 
                startScreen()
-               mouse1 = pygame.mouse.get_pos()
-               #print(mouse1)
+               #start.startButton      
                if 500 > mouse1[0] > 350 and 450 > mouse1[1] > 400:
                    print("this button works")
+                 
                    instructionScreen()
-                  # pygame.display.update() 
-           
-                   
+        
+                   pygame.display.update() 
+
                if 475 > mouse1[0] > 325 and 550 > mouse1[1] > 500: 
                   print(mouse1)
-                  print("aaa")
+                  print("this button also works")
+                  testScreen()
+                  
+                  pygame.display.update()
                   
         pygame.display.update()
 main()
