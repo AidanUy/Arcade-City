@@ -39,6 +39,7 @@ class rockPaperScissors:
         rockButton = button(screen, green, bright_green, 130, 450, 150, 50)
         paperButton = button(screen, green, bright_green, 330, 450, 150, 50)
         scissorsButton = button(screen, green, bright_green, 530, 450, 150, 50)
+        backButton = button(screen, red, bright_red, 330, 525, 150, 50)
                              
         rock = smallText.render("Rock", True, white)
         screen.blit(rock, [180, 465])
@@ -48,6 +49,9 @@ class rockPaperScissors:
 
         scissors = smallText.render("Scissors", True, white)
         screen.blit(scissors, [563, 465])
+
+        back = smallText.render("Back", True, white)
+        screen.blit(back, [380, 540])
 
         pygame.display.update()
 
