@@ -21,26 +21,20 @@ class rockPaperScissors:
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-
         clock = pygame.time.Clock()
-
-    
 
         subText = pygame.font.SysFont('Showcard Gothic', 50)
         smallText = pygame.font.SysFont('Showcard Gothic', 20)
         midText = pygame.font.SysFont('Showcard Gothic', 30)
 
-
-
         names = subText.render("Rock, Paper, or Scissors?", True, white)
         screen.blit(names, [80, 100])
-
 
         rockButton = button(screen, green, bright_green, 130, 450, 150, 50)
         paperButton = button(screen, green, bright_green, 330, 450, 150, 50)
         scissorsButton = button(screen, green, bright_green, 530, 450, 150, 50)
         backButton = button(screen, red, bright_red, 330, 525, 150, 50)
-                             
+
         rock = smallText.render("Rock", True, white)
         screen.blit(rock, [180, 465])
 
@@ -56,4 +50,3 @@ class rockPaperScissors:
         pygame.display.update()
 
         clock.tick(60)
-

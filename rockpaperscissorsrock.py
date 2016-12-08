@@ -21,7 +21,6 @@ class rockPaperScissorsRock:
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-
         clock = pygame.time.Clock()
 
         from random import randint
@@ -32,17 +31,13 @@ class rockPaperScissorsRock:
         #assign a random play to the computer
         computer = t[randint(0,2)]
 
-
         clock = pygame.time.Clock()
 
         screen.fill(black)
 
-
-
         subText = pygame.font.SysFont('Showcard Gothic', 50)
         smallText = pygame.font.SysFont('Showcard Gothic', 20)
         midText = pygame.font.SysFont('Showcard Gothic', 30)
-
 
         player = "Rock"
         if computer == "Rock":
@@ -82,4 +77,3 @@ class rockPaperScissorsRock:
         pygame.display.update()
 
         clock.tick(60)
-

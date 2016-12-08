@@ -13,6 +13,7 @@ bright_green = (0, 255, 0)
 
 blue = (0, 0, 200)
 bright_blue = (0, 0, 255)
+
 class instructionScreen:
 
     def __init__(self):

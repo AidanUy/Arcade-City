@@ -22,7 +22,6 @@ class rockPaperScissorsScissors:
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-
         clock = pygame.time.Clock()
 
         from random import randint
@@ -33,12 +32,9 @@ class rockPaperScissorsScissors:
         #assign a random play to the computer
         computer = t[randint(0,2)]
 
-
         clock = pygame.time.Clock()
 
         screen.fill(black)
-
-
 
         subText = pygame.font.SysFont('Showcard Gothic', 50)
         smallText = pygame.font.SysFont('Showcard Gothic', 20)
@@ -75,7 +71,6 @@ class rockPaperScissorsScissors:
             ticketUpdate.write(str(tickets))
             ticketUpdate.close()
 
-
         nextButton = button(screen, green, bright_green, 343, 411, 150, 50)
         nextText = midText.render("Next", True, white)
         screen.blit(nextText, [380, 426])
@@ -83,4 +78,3 @@ class rockPaperScissorsScissors:
         pygame.display.update()
 
         clock.tick(60)
-

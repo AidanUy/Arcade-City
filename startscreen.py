@@ -17,7 +17,6 @@ bright_blue = (0, 0, 255)
 class startScreen:
 
     def __init__(self):
-
         size = [800, 600]
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
@@ -51,6 +50,14 @@ class startScreen:
         ticketReset = open("tickets.txt", "w")
         ticketReset.write("0")
         ticketReset.close()
+
+        game1Reset = open("game1state.txt", "w")
+        game1Reset.write("False")
+        game1Reset.close()
+
+        game2Reset = open("game2state.txt", "w")
+        game2Reset.write("False")
+        game2Reset.close()
 
         pygame.display.update()
 

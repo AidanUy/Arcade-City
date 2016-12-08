@@ -16,7 +16,6 @@ bright_blue = (0, 0, 255)
 class gameScreen:
 
     def __init__(self):
-
         size = [800, 600]
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
@@ -43,7 +42,7 @@ class gameScreen:
         building1img = pygame.image.load("buildingrps.png").convert()
         building1 = pygame.transform.scale(building1img, (110, 250))
 
-        building2img = pygame.image.load("buildingrps.png").convert()
+        building2img = pygame.image.load("buildinghl.png").convert()
         building2 = pygame.transform.scale(building2img, (110, 250))
 
         screen.blit(building1, [100, 205])
