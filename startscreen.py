@@ -48,6 +48,9 @@ class startScreen:
         start = buttonText.render("Start!", True, white)
         screen.blit(start, [353, 410])
 
+        ticketReset = open("tickets.txt", "w")
+        ticketReset.write("0")
+        ticketReset.close()
 
         pygame.display.update()
 
