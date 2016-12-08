@@ -22,7 +22,7 @@ class gameScreen:
 
         clock = pygame.time.Clock()
 
-        background = pygame.image.load("gamescreenbg.png").convert()
+        background = pygame.image.load("bg.png").convert()
         screen.blit(background, [0, 0])
 
         tickets = open("tickets.txt", "r")
