@@ -43,7 +43,7 @@ class instructionScreen:
 
         text = titleText.render("Instructions", True, white)
         captionText = subText.render("Hey! Welcome to Arcade City! Start by walking up", True, black)
-        captionText2 = subText.render("to and playing Higher or Lower and racking up", True, black)
+        captionText2 = subText.render("to and playing Rock Paper Scissors and racking up", True, black)
         captionText3 = subText.render("tickets. Then, when you get enough tickets,", True, black)
         captionText4 = subText.render("different games will be unlocked. Have fun!", True, black)
 
