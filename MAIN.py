@@ -110,15 +110,15 @@ def main():
 
                 #Creates a clickable area underneath the image of a building that calls the higher or lower screen
                 elif 360 > mouse[0] > 250 and 455 > mouse[1] > 205 and not instructions_screen and var2 and var4 and not isRPS:
-                    tickets = open("tickets.txt", "r")
-                    tickets = tickets.read()
+                    ticketFile = open("tickets.txt", "r")
+                    tickets = ticketFile.read()
                     if int(tickets) >= 30:
                         var2 = False
                         var4 = False
                         var5 = True
                         higherOrLower(currentNum)
                         higher_lower = True
-                    tickets.close()
+                    ticketFile.close()
 
                 #Creates a button on the higher or lower screen that takes you back to the gamescreen when clicked
                 elif 480 > mouse[0] > 330 and 575 > mouse[1] > 525 and not instructions_screen and not var2 and not var4 and var5 and not isRPS and higher_lower:
