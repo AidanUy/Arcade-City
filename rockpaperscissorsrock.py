@@ -22,8 +22,6 @@ class rockPaperScissorsRock:
         pygame.display.set_caption("Arcade City")
 
 
-        done = False
-
         clock = pygame.time.Clock()
 
         from random import randint
@@ -54,7 +52,7 @@ class rockPaperScissorsRock:
         if computer == "Scissors":
             cs = midText.render("You win! Rock smashes scissors.", True, white)
 
-         screen.blit(cs, [165, 260])
+        screen.blit(cs, [165, 260])
 
         mouse = pygame.mouse.get_pos()
         if 493 > mouse[0] > 343 and 461 > mouse[1] > 411:

@@ -1,8 +1,5 @@
 import pygame, os, sys
 pygame.init()
-from rockpaperscissorsrock.py import rockPaperScissorsRock
-from rockpaperscissorspaper.py import rockPaperScissorsPaper
-from rockpaperscissorsscissors.py import rockPaperScissorsScissors
 from buttonclass import button
 
 black = (0, 0, 0)
@@ -38,31 +35,6 @@ class rockPaperScissors:
         names = subText.render("Rock, Paper, or Scissors?", True, white)
         screen.blit(names, [80, 100])
 
-        mouse = pygame.mouse.get_pos()
-        (leftclick, rightclick, midclick) = pygame.mouse.get_pressed()
-
-        if 280 > mouse[0] > 130 and 500 > mouse[1] > 450:
-            pygame.draw.rect(screen, bright_green, (130,450,150,50))
-                if leftclick == 1:
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    from rockpaperscissorsrock.py import rockPaperScissorsRock
-
-        else:
-            pygame.draw.rect(screen, green, (130, 450, 150, 50))
-        if 480 > mouse[0] > 330 and 500 > mouse[1] > 450:
-             pygame.draw.rect(screen, bright_green, (330, 450, 150, 50))
-            if leftclick == 1:
-                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    from rockpaperscissorspaper.py import rockPaperScissorsPaper
-        else:
-            pygame.draw.rect(screen, green, (330, 450, 150, 50)
-        if 680 > mouse[0] > 530 and 500 > mouse[1] > 450:
-            pygame.draw.rect(screen, bright_green, (530, 450, 150, 50))
-            if leftclick == 1:
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    from rockpaperscissorsscissors.py import rockPaperScissorsScissors
-        else:
-            pygame.draw.rect(screen, green, (530, 450, 150, 50))
 
         rockButton = button(screen, green, bright_green, 130, 450, 150, 50)
         paperButton = button(screen, green, bright_green, 330, 450, 150, 50)
