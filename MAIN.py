@@ -18,17 +18,10 @@ blue = (0, 0, 200)
 bright_blue = (0, 0, 255)
 
 def main():
-    screen = pygame.display.set_mode([800,600])
+    size = [800, 600]
+    screen = pygame.display.set_mode(size)
+    pygame.display.set_caption("Arcade City")
 
-    start = startScreen()
-    #startButton = button(green, bright_green, 350, 400, 150, 50)
-    #display_startscreen = True
-    #startscreen = 1
-
-    mouse1 = pygame.mouse.get_pos()
-
-
-    #instruction = instructionScreen()
     start = startScreen()
     var = True
     done = False
@@ -40,7 +33,6 @@ def main():
                 done = True
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-<<<<<<< HEAD
                 mouse1 = pygame.mouse.get_pos()
 
                 if 500 > mouse1[0] > 350 and 450 > mouse1[1] > 400 and var:
@@ -50,41 +42,5 @@ def main():
                 elif 475 > mouse1[0] > 325 and 550 > mouse1[1] > 500 and not var:
                     var = False
                     gameScreen()
-                    pygame.display.update()
-
-        pygame.display.update()
-
-    pygame.display.uodate()
 
 main()
-=======
-               mouse1 = pygame.mouse.get_pos() 
-              
-               #start.startButton      
-               if 500 > mouse1[0] > 350 and 450 > mouse1[1] > 400 and var:
-                   print("this start button works")                                                
-                   var = False 
-                   instructionScreen()
-                   
-               elif 475 > mouse1[0] > 325 and 550 > mouse1[1] > 500 and not var: 
-                  #print(mouse1)
-                  print("this instructions button also works")
-                  var = False
-                  testScreen()
-
-               elif 
-                   
-                  pygame.display.update()
-            
-        pygame.display.update()   
-    pygame.display.update()
-
-    
-            
-                
-main()                            
-                  
-
-            
-       
->>>>>>> d3357b128febae4bfd495524666baba9e8a4e248
