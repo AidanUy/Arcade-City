@@ -1,4 +1,4 @@
-import pygame, os, sys
+import pygame, os, sys, random
 from buttonclass import button
 from startscreen import startScreen
 from instructions import instructionScreen
@@ -7,6 +7,9 @@ from rockpaperscissors import rockPaperScissors
 from rockpaperscissorsrock import rockPaperScissorsRock
 from rockpaperscissorspaper import rockPaperScissorsPaper
 from rockpaperscissorsscissors import rockPaperScissorsScissors
+from higherOrLower import higherOrLower
+from higherorlowerhigher import higherOrLowerHigher
+from higherorlowerlower import higherOrLowerLower
 pygame.init()
 
 black = (0, 0, 0)
@@ -32,6 +35,8 @@ def main():
     var1 = True
     var2 = True
     var3 = True
+    var4 = True
+    higher_lower = False
     isRPS = False
     done = False
     while not done:
@@ -40,6 +45,8 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 done = True
+
+            currentNum = random.randrange(30)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse = pygame.mouse.get_pos()
@@ -57,13 +64,13 @@ def main():
                     var3 = True
                     isRPS = True
                     rockPaperScissors()
-                    
+
                 elif 480 > mouse[0] > 330 and 575 > mouse[1] > 525 and not var2 and isRPS and var3:
                     var2 = True
                     var3 = False
                     isRPS = False
                     gameScreen()
-                    
+
                 elif 280 > mouse[0] > 130 and 500 > mouse[1] > 450 and not var2 and isRPS and var3:
                     var3 = False
                     rockPaperScissorsRock()
@@ -71,7 +78,7 @@ def main():
                 elif 493 > mouse[0] > 343 and 461 > mouse[1] > 411 and not var2 and isRPS:
                     var3 = True
                     rockPaperScissors()
-                    
+
                 elif 480 > mouse[0] > 330 and 500 > mouse[1] > 450 and not var2 and isRPS and var3:
                     var3 = False
                     rockPaperScissorsPaper()
@@ -88,6 +95,18 @@ def main():
                     var3 = True
                     rockPaperScissors()
 
+                elif 360 > mouse[0] > 250 and 455 > mouse[1] > 205 and not instructions_screen and var2 and not isRPS:
+                    var2 = False
+                    higherOrLower(currentNum)
+                    higher_lower = True
 
-                    
+                elif 300 > mouse[0] > 150 and 500 > mouse[1] > 450 and var4 and not instructions_screen and not var2 and not isRPS and higher_lower:
+                    var4 = False
+                    higherOrLowerHigher(currentNum)
+
+                elif 665 > mouse[0] > 515 and 500 > mouse[1] > 450 and var4 and not instructions_screen and not var2 and not isRPS and higher_lower:
+                    var4 = False
+                    higherOrLowerLower(currentNum)
+
+
 main()
