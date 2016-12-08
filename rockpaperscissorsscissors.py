@@ -1,5 +1,19 @@
 import pygame, os, sys
 pygame.init()
+from buttonclass import button
+
+black = (0, 0, 0)
+white = (255, 255, 255)
+
+red = (200, 0, 0)
+bright_red = (255, 0, 0)
+
+green = (0, 200, 0)
+bright_green = (0, 255, 0)
+
+blue = (0, 0, 200)
+bright_blue = (0, 0, 255)
+
 
 class rockPaperScissorsScissors:
 
@@ -8,17 +22,7 @@ class rockPaperScissorsScissors:
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-        black = (0, 0, 0)
-        white = (255, 255, 255)
 
-        red = (200, 0, 0)
-        bright_red = (255, 0, 0)
-
-        green = (0, 200, 0)
-        bright_green = (0, 255, 0)
-
-        blue = (0, 0, 200)
-        bright_blue = (0, 0, 255)
 
         done = False
 
@@ -72,6 +76,3 @@ class rockPaperScissorsScissors:
 
             clock.tick(60)
 
-def main():
-    rockPaperScissorsScissors()
-main()

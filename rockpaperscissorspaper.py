@@ -1,5 +1,18 @@
 import pygame, os, sys
 pygame.init()
+from buttonclass import button
+
+black = (0, 0, 0)
+white = (255, 255, 255)
+
+red = (200, 0, 0)
+bright_red = (255, 0, 0)
+
+green = (0, 200, 0)
+bright_green = (0, 255, 0)
+
+blue = (0, 0, 200)
+bright_blue = (0, 0, 255)
 
 class rockPaperScissorsPaper:
 
@@ -8,19 +21,6 @@ class rockPaperScissorsPaper:
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-        black = (0, 0, 0)
-        white = (255, 255, 255)
-
-        red = (200, 0, 0)
-        bright_red = (255, 0, 0)
-
-        green = (0, 200, 0)
-        bright_green = (0, 255, 0)
-
-        blue = (0, 0, 200)
-        bright_blue = (0, 0, 255)
-
-        done = False
 
         clock = pygame.time.Clock()
 
@@ -32,47 +32,36 @@ class rockPaperScissorsPaper:
         #assign a random play to the computer
         computer = t[randint(0,2)]
 
-        done = False
 
-        clock = pygame.time.Clock()
+        subText = pygame.font.SysFont('Showcard Gothic', 50)
+        smallText = pygame.font.SysFont('Showcard Gothic', 20)
+        midText = pygame.font.SysFont('Showcard Gothic', 30)
 
-        screen.fill(black)
+        player = "Paper"
+        if computer == "Paper":
+            cs = midText.render("Tie!", True, white)
+        if computer == "Scissors":
+            cs = midText.render("You lose! Scissors cuts paper.", True, white)
+        if computer == "Rock":
+            cs = midText.render("You win! Paper covers rock.", True, white)
 
-        while not done:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    done = True
-
-            subText = pygame.font.SysFont('Showcard Gothic', 50)
-            smallText = pygame.font.SysFont('Showcard Gothic', 20)
-            midText = pygame.font.SysFont('Showcard Gothic', 30)
-
-            player = "Paper"
-            if computer == "Paper":
-                cs = midText.render("Tie!", True, white)
-            if computer == "Scissors":
-                cs = midText.render("You lose! Scissors cuts paper.", True, white)
-            if computer == "Rock":
-                cs = midText.render("You win! Paper covers rock.", True, white)
-
-            screen.blit(cs, [165, 260])
-
-            mouse = pygame.mouse.get_pos()
-            if 493 > mouse[0] > 343 and 461 > mouse[1] > 411:
-                pygame.draw.rect(screen, bright_green, (343, 411, 150, 50))
-            else:
-                pygame.draw.rect(screen, green, (343, 411, 150, 50))
+        screen.blit(cs, [165, 260])
 
 
-            if 494 > mouse[0] > 343 and 461 > mouse[1] > 411:
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    from rockpaperscissors.py import rockPaperScissors
+        nextButton = button(screen, green, bright_green, 343, 411, 150, 50)
+        
+        mouse = pygame.mouse.get_pos()
+        if 493 > mouse[0] > 343 and 461 > mouse[1] > 411:
+            pygame.draw.rect(screen, bright_green, (343, 411, 150, 50))
+        else:
+            pygame.draw.rect(screen, green, (343, 411, 150, 50))
 
-            pygame.display.update()
 
-            clock.tick(60)
+        if 494 > mouse[0] > 343 and 461 > mouse[1] > 411:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                from rockpaperscissors.py import rockPaperScissors
 
-def main():
-    rockPaperScissorsPaper()
-main()
+        pygame.display.update()
+
+        clock.tick(60)
+
