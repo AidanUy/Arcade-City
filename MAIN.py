@@ -2,7 +2,7 @@ import pygame, os, sys
 from buttonclass import button
 from startscreen import startScreen
 from instructions import instructionScreen
-from testingscreen import testScreen
+from gamescreen import gameScreen
 pygame.init()
 
 black = (0, 0, 0)
@@ -17,16 +17,14 @@ bright_green = (0, 255, 0)
 blue = (0, 0, 200)
 bright_blue = (0, 0, 255)
 
-def instruction():
-    instruction = instructionScreen()
 def main():
     screen = pygame.display.set_mode([800,600])
-    
+
     start = startScreen()
     #startButton = button(green, bright_green, 350, 400, 150, 50)
     #display_startscreen = True
     #startscreen = 1
-   
+
     mouse1 = pygame.mouse.get_pos()
 
 
@@ -35,13 +33,31 @@ def main():
     var = True
     done = False
     while not done:
-        
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-               pygame.quit()
-               done = True
-           
+                pygame.quit()
+                done = True
+
             if event.type == pygame.MOUSEBUTTONDOWN:
+<<<<<<< HEAD
+                mouse1 = pygame.mouse.get_pos()
+
+                if 500 > mouse1[0] > 350 and 450 > mouse1[1] > 400 and var:
+                    var = False
+                    instructionScreen()
+
+                elif 475 > mouse1[0] > 325 and 550 > mouse1[1] > 500 and not var:
+                    var = False
+                    gameScreen()
+                    pygame.display.update()
+
+        pygame.display.update()
+
+    pygame.display.uodate()
+
+main()
+=======
                mouse1 = pygame.mouse.get_pos() 
               
                #start.startButton      
@@ -71,3 +87,4 @@ main()
 
             
        
+>>>>>>> d3357b128febae4bfd495524666baba9e8a4e248

@@ -22,8 +22,6 @@ class startScreen:
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
 
-    
-
         clock = pygame.time.Clock()
 
         background = pygame.image.load("background.png").convert()
@@ -33,30 +31,24 @@ class startScreen:
         pygame.mixer.music.play(loops = -1)
         pygame.mixer.music.set_volume(0.5)
 
-       
-
         titleText = pygame.font.SysFont('Showcard Gothic', 60)
         subText = pygame.font.SysFont('Showcard Gothic', 20)
- 
+
         text = titleText.render("Arcade City", True, white)
         cs = subText.render("CS110 Final Project", True, white)
         names = subText.render("Aidan Uy, Crystal Low, Danika Gaviola, Dylan Pan", True, white)
 
-        screen.blit(text, [220, 200])
+        screen.blit(text, [218, 200])
         screen.blit(cs, [310, 265])
         screen.blit(names, [150, 290])
 
-                
-        startButton = button(screen, green, bright_green, 350, 400, 150, 50)
-      
+        startButton = button(screen, green, bright_green, 330, 400, 150, 50)
+
         buttonText = pygame.font.SysFont('Showcard Gothic', 30)
         start = buttonText.render("Start!", True, white)
-        screen.blit(start,[400,420])
-           
+        screen.blit(start, [353, 410])
+
 
         pygame.display.update()
 
         clock.tick(60)
-
-
-
