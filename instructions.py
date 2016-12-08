@@ -1,8 +1,6 @@
-import pygame
-import sys
-import os
+import pygame, sys, os
 from buttonclass import button
-#pygame.init()
+pygame.init()
 
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -18,40 +16,31 @@ bright_blue = (0, 0, 255)
 class instructionScreen:
 
     def __init__(self):
-       #pygame.display.init()
-
-
         size = [800, 600]
         screen = pygame.display.set_mode(size)
         pygame.display.set_caption("Arcade City")
-
- 
 
         clock = pygame.time.Clock()
 
         background = pygame.image.load("background.png").convert()
         screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
-        oak = pygame.image.load("oak.png").convert()
-        oak.set_colorkey(black)
-        screen.blit(oak, [570, 130])
-        
+        shopkeeper = pygame.image.load("shopkeeper.png").convert()
+        shopkeeper.set_colorkey(black)
+        screen.blit(shopkeeper, [70, 130])
 
-              
         titleText = pygame.font.SysFont('Showcard Gothic', 60)
         subText = pygame.font.SysFont('Showcard Gothic', 25)
 
         text = titleText.render("Instructions", True, white)
         captionText = subText.render("Hey! Welcome to Arcade City! Start by walking up", True, black)
-        captionText2 = subText.render("to and playing Rock Paper Scissors and racking up", True, black)
+        captionText2 = subText.render("to and playing Higher or Lower and racking up", True, black)
         captionText3 = subText.render("tickets. Then, when you get enough tickets,", True, black)
         captionText4 = subText.render("different games will be unlocked. Have fun!", True, black)
 
         screen.blit(text, [200, 80])
-             
-                
-        playButton = button(screen, green, bright_green, 325, 500, 150, 50) 
-    
+
+        playButton = button(screen, green, bright_green, 325, 500, 150, 50)
 
         buttonText = pygame.font.SysFont('Showcard Gothic', 30)
 
@@ -66,9 +55,6 @@ class instructionScreen:
         play = buttonText.render("Play!", True, white)
         screen.blit(play, [357, 515])
 
-            
-
         pygame.display.update()
 
         clock.tick(60)
-
