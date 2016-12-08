@@ -42,6 +42,7 @@ class higherOrLower:
 
         higherButton = button(screen, blue, bright_blue, 150, 450, 150, 50)
         lowerButton = button(screen, blue, bright_blue, 515, 450, 150, 50)
+        backButton = button(screen, red, bright_blue, 330, 525, 150, 50)
 
         line1 = subText.render(("My number is " + str(currentNum) + "."), True, black)
         line2 = subText.render("Will my next number be higher or lower?", True, black)
@@ -50,8 +51,10 @@ class higherOrLower:
 
         higherText = buttonText.render("Higher", True, white)
         lowerText = buttonText.render("Lower", True, white)
+        backText = buttonText.render("Back", True, white)
         screen.blit(higherText, [166, 460])
         screen.blit(lowerText, [535, 460])
+        screen.blit(backText, [365, 535])
 
         pygame.display.update()
 

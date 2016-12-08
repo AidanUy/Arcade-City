@@ -30,14 +30,17 @@ def main():
     pygame.display.set_caption("Arcade City")
 
     start = startScreen()
+
     start_screen = True
     instructions_screen = True
     var1 = True
     var2 = True
     var3 = True
     var4 = True
+    var5 = True
     higher_lower = False
     isRPS = False
+
     done = False
     while not done:
 
@@ -87,7 +90,7 @@ def main():
                     var3 = True
                     rockPaperScissors()
 
-                elif 680 > mouse[0] > 530 and 500 > mouse[1] > 450 and not var2 and isRPS and var3:
+                elif 680 > mouse[0] > 530 and 500 > mouse[1] > 450 and not var2 and var3 and isRPS:
                     var3 = False
                     rockPaperScissorsScissors()
 
@@ -95,18 +98,35 @@ def main():
                     var3 = True
                     rockPaperScissors()
 
-                elif 360 > mouse[0] > 250 and 455 > mouse[1] > 205 and not instructions_screen and var2 and not isRPS:
+                elif 360 > mouse[0] > 250 and 455 > mouse[1] > 205 and not instructions_screen and var2 and var4 and not isRPS:
                     var2 = False
+                    var4 = False
+                    var5 = True
                     higherOrLower(currentNum)
                     higher_lower = True
 
-                elif 300 > mouse[0] > 150 and 500 > mouse[1] > 450 and var4 and not instructions_screen and not var2 and not isRPS and higher_lower:
-                    var4 = False
+                elif 480 > mouse[0] > 330 and 575 > mouse[1] > 525 and not instructions_screen and not var2 and not var4 and var5 and not isRPS and higher_lower:
+                    var2 = True
+                    var4 = True
+                    var5 = False
+                    higher_lower = False
+                    gameScreen()
+
+                elif 300 > mouse[0] > 150 and 500 > mouse[1] > 450 and not instructions_screen and not var2 and not var4 and var5 and not isRPS and higher_lower:
+                    var5 = False
                     higherOrLowerHigher(currentNum)
 
-                elif 665 > mouse[0] > 515 and 500 > mouse[1] > 450 and var4 and not instructions_screen and not var2 and not isRPS and higher_lower:
-                    var4 = False
+                elif 480 > mouse[0] > 330 and 525 > mouse[1] > 475 and not instructions_screen and not var2 and not var4 and not var5 and not isRPS and higher_lower:
+                    var5 = True
+                    higherOrLower(currentNum)
+
+                elif 665 > mouse[0] > 515 and 500 > mouse[1] > 450 and not instructions_screen and not var2 and not var4 and var5 and not isRPS and higher_lower:
+                    var5 = False
                     higherOrLowerLower(currentNum)
+
+                elif 480 > mouse[0] > 330 and 525 > mouse[1] > 475 and not instructions_screen and not var2 and not var4 and not var5 and not isRPS and higher_lower:
+                    var5 = True
+                    higherOrLower(currentNum)
 
 
 main()
