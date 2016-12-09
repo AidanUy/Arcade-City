@@ -31,14 +31,21 @@ def main():
 
     start = startScreen()
 
+    #variable used to make buttons functional only on the start screen
     start_screen = True
+    #variable used to make buttons functional only on the instructions screen
     instructions_screen = True
-    var1 = True
+    #variable used to make buttons functional only on the game screen
     var2 = True
+    #variables used to make buttons functional on rock paper scissors and loop
     var3 = True
+    #variable used to make the higher lower button functional on the game screen
     var4 = True
+    #variable used to make higher and lower buttons loop
     var5 = True
+    #variable used to make buttons functional only on higher and lower
     higher_lower = False
+    #variable used to make buttons functional when rock paper scissors is running
     isRPS = False
 
     done = False
