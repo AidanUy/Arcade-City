@@ -1,5 +1,7 @@
 import pygame
 from pygame.locals import *
+from gamescreen import gameScreen
+from buttonclass import button
 import sys, os
 import time
 
@@ -28,10 +30,13 @@ class paint:
 
         mouse = pygame.mouse
         fpsClock = pygame.time.Clock()
+        
 
         width = 800
         height = 600
-
+        size = [800,600]
+        screen = pygame.display.set_mode(size)
+        
         colors = [BLACK, RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE, PINK]
         i = 0
         window = pygame.display.set_mode((width,height))
@@ -39,6 +44,11 @@ class paint:
         canvas.fill(WHITE)
         color = colors[i]
         size = 5
+        buttonText = pygame.font.SysFont('Showcard Gothic', 30)
+
+        backButton = button(screen, PINK, PURPLE, 20, 20, 20, 100)
+        bText = buttonText.render("Back", True, BLACK)
+        screen.blit(bText, [25,60])
         while True:
             left_pressed = mouse.get_pressed()
             middle_pressed = mouse.get_pressed()
@@ -65,3 +75,4 @@ class paint:
             window.fill(WHITE)
             window.blit(canvas, (0,0))
             pygame.display.update()
+
