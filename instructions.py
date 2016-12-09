@@ -1,4 +1,4 @@
-import pygame, sys, os, random
+import pygame, os, sys, random
 from buttonclass import button
 pygame.init()
 
@@ -23,26 +23,26 @@ class instructionScreen:
 
         clock = pygame.time.Clock()
 
-
         background = pygame.image.load("mainscreen.png").convert()
         screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
-        shopkeeper = pygame.image.load("instructgirl.png").convert()
-        shopkeeper.set_colorkey(black)
-        screen.blit(shopkeeper, [70, 130])
+        instructgirlimg = pygame.image.load("instructgirl.png").convert()
+        instructgirl = pygame.transform.scale(instructgirlimg, (200, 200))
+        instructgirl.set_colorkey(black)
+        screen.blit(instructgirl, [70, 110])
 
         titleText = pygame.font.SysFont('Showcard Gothic', 60)
         subText = pygame.font.SysFont('Showcard Gothic', 25)
 
         text = titleText.render("Instructions", True, white)
         captionText = subText.render("Hey! Welcome to Arcade City! Start by clicking the", True, black)
-        captionText2 = subText.render("first building to play Rock Paper Scissors and rack up", True, black)
-        captionText3 = subText.render("tickets. Then, when you get 300 tickets,", True, black)
+        captionText2 = subText.render("first building to play Rock, Paper, Scissors and", True, black)
+        captionText3 = subText.render("rack up tickets. Then, when you get 300 tickets,", True, black)
         captionText4 = subText.render("the second building is unlocked. Have fun!", True, black)
 
         screen.blit(text, [200, 80])
 
-        playButton = button(screen, green, bright_green, 325, 500, 150, 50)
+        playButton = button(screen, green, 325, 500, 150, 50)
 
         buttonText = pygame.font.SysFont('Showcard Gothic', 30)
 
@@ -60,4 +60,3 @@ class instructionScreen:
         pygame.display.update()
 
         clock.tick(60)
-

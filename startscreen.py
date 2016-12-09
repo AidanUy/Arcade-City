@@ -1,5 +1,4 @@
-import pygame
-import sys
+import pygame, os, sys
 from buttonclass import button
 
 black = (0, 0, 0)
@@ -23,7 +22,7 @@ class startScreen:
 
         clock = pygame.time.Clock()
 
-        background = pygame.image.load("background.png").convert()
+        background = pygame.image.load("mainscreen.png").convert()
         screen.blit(background, [0, 0])
 
         pygame.mixer.music.load("music.mp3")
@@ -41,14 +40,14 @@ class startScreen:
         screen.blit(cs, [310, 265])
         screen.blit(names, [150, 290])
 
-        startButton = button(screen, green, bright_green, 330, 400, 150, 50)
+        startButton = button(screen, green, 330, 400, 150, 50)
 
         buttonText = pygame.font.SysFont('Showcard Gothic', 30)
         start = buttonText.render("Start!", True, white)
         screen.blit(start, [353, 410])
 
         ticketReset = open("tickets.txt", "w")
-        ticketReset.write("30")
+        ticketReset.write("0")
         ticketReset.close()
 
         game1Reset = open("game1state.txt", "w")

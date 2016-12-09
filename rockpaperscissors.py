@@ -30,10 +30,10 @@ class rockPaperScissors:
         names = subText.render("Rock, Paper, or Scissors?", True, white)
         screen.blit(names, [80, 100])
 
-        rockButton = button(screen, green, bright_green, 130, 450, 150, 50)
-        paperButton = button(screen, green, bright_green, 330, 450, 150, 50)
-        scissorsButton = button(screen, green, bright_green, 530, 450, 150, 50)
-        backButton = button(screen, red, bright_red, 330, 525, 150, 50)
+        rockButton = button(screen, green, 130, 450, 150, 50)
+        paperButton = button(screen, green, 330, 450, 150, 50)
+        scissorsButton = button(screen, green, 530, 450, 150, 50)
+        backButton = button(screen, bright_red, 330, 525, 150, 50)
 
         rock = smallText.render("Rock", True, white)
         screen.blit(rock, [180, 465])

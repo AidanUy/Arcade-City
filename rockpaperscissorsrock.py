@@ -25,15 +25,9 @@ class rockPaperScissorsRock:
 
         from random import randint
 
-        #create a list of play options
         t = ["Rock", "Paper", "Scissors"]
 
-        #assign a random play to the computer
         computer = t[randint(0,2)]
-
-        clock = pygame.time.Clock()
-
-        screen.fill(black)
 
         subText = pygame.font.SysFont('Showcard Gothic', 50)
         smallText = pygame.font.SysFont('Showcard Gothic', 20)
@@ -70,7 +64,7 @@ class rockPaperScissorsRock:
             ticketUpdate.write(str(tickets))
             ticketUpdate.close()
 
-        nextButton = button(screen, green, bright_green, 343, 411, 150, 50)
+        nextButton = button(screen, green, 343, 411, 150, 50)
         nextText = midText.render("Next", True, white)
         screen.blit(nextText, [380, 426])
 

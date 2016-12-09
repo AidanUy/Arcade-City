@@ -23,12 +23,13 @@ class higherOrLowerHigher:
 
         clock = pygame.time.Clock()
 
-        background = pygame.image.load("background.png").convert()
+        background = pygame.image.load("bggamescreen.png").convert()
         screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
-        oak = pygame.image.load("oak.png").convert()
-        oak.set_colorkey(black)
-        screen.blit(oak, [570, 110])
+        instructgirlimg = pygame.image.load("instructgirl.png").convert()
+        instructgirl = pygame.transform.scale(instructgirlimg, (200, 200))
+        instructgirl.set_colorkey(black)
+        screen.blit(instructgirl, [70, 110])
 
         newNum = random.randrange(30)
 

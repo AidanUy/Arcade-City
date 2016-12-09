@@ -1,5 +1,6 @@
 import pygame, os, sys
 from buttonclass import button
+pygame.init()
 
 black = (0, 0, 0)
 white = (255, 255, 255)

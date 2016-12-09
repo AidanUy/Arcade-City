@@ -1,5 +1,4 @@
-import pygame
-import sys
+import pygame, os, sys
 from buttonclass import button
 
 black = (0, 0, 0)
