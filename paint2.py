@@ -46,7 +46,7 @@ class paint:
         size = 5
         buttonText = pygame.font.SysFont('Showcard Gothic', 30)
 
-        backButton = button(screen, PINK, PURPLE, 20, 20, 20, 100)
+        backButton = button(screen, RED, 20, 20, 20, 100)
         bText = buttonText.render("Back", True, BLACK)
         screen.blit(bText, [25,60])
         while True:

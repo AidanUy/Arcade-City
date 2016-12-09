@@ -149,7 +149,6 @@ def main():
                 #Creates a button on the higher or lower screen that takes you to the outcome screen of lower when clicked
                 elif 665 > mouse[0] > 515 and 500 > mouse[1] > 450 and not instructions_screen and not var2 and not var4 and var5 and not isRPS and higher_lower:
                     var5 = False
-                    currentNum = random.randrange(30)
                     higherOrLowerLower(currentNum)
 
                 #Creates a button on the lower outcome screen that takes you back to the higher or lower screen when clicked
