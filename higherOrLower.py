@@ -23,6 +23,8 @@ class higherOrLower:
 
         clock = pygame.time.Clock()
 
+
+
         background = pygame.image.load("background.png").convert()
         screen.blit(background, [0,0])
         caption = pygame.image.load("caption.png").convert()
@@ -59,3 +61,4 @@ class higherOrLower:
         pygame.display.update()
 
         clock.tick(60)
+

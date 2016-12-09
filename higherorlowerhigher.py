@@ -62,7 +62,7 @@ class higherOrLowerHigher:
             ticketUpdate = open("tickets.txt", "w")
             ticketUpdate.write(str(tickets))
             ticketUpdate.close()
-        else:
+        elif newNum < currentNum:
             screen.blit(loseText, [50, 300])
             tickLose = -5
             ticketFile = open("tickets.txt", "r")

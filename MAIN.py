@@ -42,6 +42,7 @@ def main():
     isRPS = False
 
     done = False
+
     while not done:
 
         for event in pygame.event.get():
@@ -49,7 +50,7 @@ def main():
                 pygame.quit()
                 done = True
 
-            currentNum = random.randrange(30)
+
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse = pygame.mouse.get_pos()
@@ -116,8 +117,9 @@ def main():
                         var2 = False
                         var4 = False
                         var5 = True
-                        higherOrLower(currentNum)
                         higher_lower = True
+                        currentNum = random.randrange(30)
+                        higherOrLower(currentNum)
                     ticketFile.close()
 
                 #Creates a button on the higher or lower screen that takes you back to the gamescreen when clicked
@@ -136,16 +138,19 @@ def main():
                 #Creates a button on the higher outcome screen that takes you back to the higher or lower screen when clicked
                 elif 480 > mouse[0] > 330 and 525 > mouse[1] > 475 and not instructions_screen and not var2 and not var4 and not var5 and not isRPS and higher_lower:
                     var5 = True
+                    currentNum = random.randrange(30)
                     higherOrLower(currentNum)
 
                 #Creates a button on the higher or lower screen that takes you to the outcome screen of lower when clicked
                 elif 665 > mouse[0] > 515 and 500 > mouse[1] > 450 and not instructions_screen and not var2 and not var4 and var5 and not isRPS and higher_lower:
                     var5 = False
+                    currentNum = random.randrange(30)
                     higherOrLowerLower(currentNum)
 
                 #Creates a button on the lower outcome screen that takes you back to the higher or lower screen when clicked
                 elif 480 > mouse[0] > 330 and 525 > mouse[1] > 475 and not instructions_screen and not var2 and not var4 and not var5 and not isRPS and higher_lower:
                     var5 = True
+                    currentNum = random.randrange(30)
                     higherOrLower(currentNum)
 
 

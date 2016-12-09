@@ -50,7 +50,7 @@ class higherOrLowerLower:
         winText = subText.render(("Correct!  The number was " + str(newNum) + ". Here is your ticket."),True, black)
         loseText = subText.render(("You lost.  The number was " + str(newNum) + ". Try again later!"), True, black)
 
-        if newNum < currentNum:
+        if newNum <= currentNum:
             screen.blit(winText, [50, 300])
             tickWin = 10
             ticketFile = open("tickets.txt", "r")
@@ -62,7 +62,7 @@ class higherOrLowerLower:
             ticketUpdate = open("tickets.txt", "w")
             ticketUpdate.write(str(tickets))
             ticketUpdate.close()
-        else:
+        elif newNum > currentNum:
             screen.blit(loseText, [50, 300])
             tickLose = -5
             ticketFile = open("tickets.txt", "r")

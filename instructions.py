@@ -1,4 +1,4 @@
-import pygame, sys, os
+import pygame, sys, os, random
 from buttonclass import button
 pygame.init()
 
@@ -23,10 +23,11 @@ class instructionScreen:
 
         clock = pygame.time.Clock()
 
+
         background = pygame.image.load("background.png").convert()
         screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
-        shopkeeper = pygame.image.load("shopkeeper.png").convert()
+        shopkeeper = pygame.image.load("oak.png").convert()
         shopkeeper.set_colorkey(black)
         screen.blit(shopkeeper, [70, 130])
 
@@ -59,3 +60,4 @@ class instructionScreen:
         pygame.display.update()
 
         clock.tick(60)
+
