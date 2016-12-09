@@ -37,7 +37,7 @@ class gameScreen:
         pygame.draw.line(screen, red, [660, 0], [660, 93], 7)
         pygame.draw.line(screen, red, [660, 90], [800, 90], 7)
 
-        screen.blit(ticks, [710, 50])
+        screen.blit(ticks, [707, 50])
         screen.blit(ticklabel, [670, 10])
 
         building1img = pygame.image.load("buildingrps.png").convert()

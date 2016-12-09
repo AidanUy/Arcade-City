@@ -59,6 +59,8 @@ class higherOrLowerLower:
             tickets = int(tickets) + tickWin
             if tickets <= 0:
                 tickets = 0
+            elif tickets >= 1000:
+                tickets = 1000
             ticketFile.close()
             ticketUpdate = open("tickets.txt", "w")
             ticketUpdate.write(str(tickets))
@@ -71,6 +73,8 @@ class higherOrLowerLower:
             tickets = int(tickets) + tickLose
             if tickets <= 0:
                 tickets = 0
+            elif tickets >= 1000:
+                tickets = 1000
             ticketFile.close()
             ticketUpdate = open("tickets.txt", "w")
             ticketUpdate.write(str(tickets))

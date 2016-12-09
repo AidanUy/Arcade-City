@@ -1,6 +1,6 @@
 import pygame, os, sys
-pygame.init()
 from buttonclass import button
+pygame.init()
 
 black = (0, 0, 0)
 white = (255, 255, 255)
@@ -47,6 +47,8 @@ class rockPaperScissorsScissors:
             tickets = int(tickets) + tickLose
             if tickets <= 0:
                 tickets = 0
+            elif tickets >= 1000:
+                tickets = 1000
             ticketFile.close()
             ticketUpdate = open("tickets.txt", "w")
             ticketUpdate.write(str(tickets))
@@ -60,14 +62,16 @@ class rockPaperScissorsScissors:
             tickets = int(tickets) + tickWin
             if tickets <= 0:
                 tickets = 0
+            elif tickets >= 1000:
+                tickets = 1000
             ticketFile.close()
             ticketUpdate = open("tickets.txt", "w")
             ticketUpdate.write(str(tickets))
             ticketUpdate.close()
 
-        nextButton = button(screen, green, 343, 411, 150, 50)
-        nextText = midText.render("Next", True, white)
-        screen.blit(nextText, [380, 426])
+        backButton = button(screen, green, 343, 411, 150, 50)
+        backText = midText.render("Back", True, white)
+        screen.blit(backText, [380, 426])
 
         pygame.display.update()
 
