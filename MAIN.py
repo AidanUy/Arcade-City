@@ -57,8 +57,6 @@ def main():
                 pygame.quit()
                 done = True
 
-
-
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse = pygame.mouse.get_pos()
 
@@ -120,7 +118,7 @@ def main():
                 elif 360 > mouse[0] > 250 and 455 > mouse[1] > 205 and not instructions_screen and var2 and var4 and not isRPS:
                     ticketFile = open("tickets.txt", "r")
                     tickets = ticketFile.read()
-                    if int(tickets) >= 30:
+                    if int(tickets) >= 300:
                         var2 = False
                         var4 = False
                         var5 = True
@@ -159,6 +157,5 @@ def main():
                     var5 = True
                     currentNum = random.randrange(30)
                     higherOrLower(currentNum)
-
 
 main()

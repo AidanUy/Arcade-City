@@ -41,7 +41,7 @@ class rockPaperScissorsScissors:
         if computer == "Rock":
             cs = midText.render("You lose! Rock smashes scissors.", True, white)
             screen.blit(cs, [165, 260])
-            tickLose = -5
+            tickLose = -10
             ticketFile = open("tickets.txt", "r")
             tickets = ticketFile.read()
             tickets = int(tickets) + tickLose
@@ -56,7 +56,7 @@ class rockPaperScissorsScissors:
         if computer == "Paper":
             cs = midText.render("You win! Scissors cuts paper.", True, white)
             screen.blit(cs, [165, 260])
-            tickWin = 10
+            tickWin = 30
             ticketFile = open("tickets.txt", "r")
             tickets = ticketFile.read()
             tickets = int(tickets) + tickWin
