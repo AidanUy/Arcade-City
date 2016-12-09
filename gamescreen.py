@@ -39,7 +39,7 @@ class gameScreen:
         screen.blit(ticks, [710, 50])
         screen.blit(ticklabel, [670, 10])
 
-         building1img = pygame.image.load("buildingrps.png").convert()
+        building1img = pygame.image.load("buildingrps.png").convert()
         building1 = pygame.transform.scale(building1img, (120, 260))
 
         building2img = pygame.image.load("buildinghl.png").convert()
