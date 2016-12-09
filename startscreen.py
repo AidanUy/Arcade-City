@@ -50,14 +50,6 @@ class startScreen:
         ticketReset.write("0")
         ticketReset.close()
 
-        game1Reset = open("game1state.txt", "w")
-        game1Reset.write("False")
-        game1Reset.close()
-
-        game2Reset = open("game2state.txt", "w")
-        game2Reset.write("False")
-        game2Reset.close()
-
         pygame.display.update()
 
         clock.tick(60)

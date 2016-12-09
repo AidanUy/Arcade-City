@@ -106,6 +106,26 @@ class gameScreen:
             screen.blit(captionText, [25, 75])
             screen.blit(captionText2, [25, 90])
 
+        elif int(tickets) >= 300:
+            captionImg = pygame.image.load("caption.png").convert()
+            caption = pygame.transform.scale(captionImg, (500, 70))
+            instructgirlimg = pygame.image.load("instructgirl.png").convert()
+            instructgirl = pygame.transform.scale(instructgirlimg, (80, 80))
+            instructgirl.set_colorkey(black)
+
+            screen.blit(instructgirl, [-10, -10])
+            screen.blit(caption, [0, 65])
+            pygame.draw.rect(screen, white, (25, 75, 430, 50))
+
+            remainingTicks = str(int(tickets) - 300)
+
+            captionText = subText.render("Nice job!  Be careful though, if you lose more than", True, black)
+            captionText2 = subText.render((remainingTicks + " tickets, you'll have to get back to 300 tickets to"), True, black)
+            captionText3 = subText.render("play Higher or Lower again!", True, black)
+            screen.blit(captionText, [25, 75])
+            screen.blit(captionText2, [25, 90])
+            screen.blit(captionText3, [25, 105])
+
         ticketFile.close()
 
         pygame.display.update()
