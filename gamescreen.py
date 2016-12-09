@@ -26,20 +26,6 @@ class gameScreen:
         background = pygame.image.load("bggamescreen.png").convert()
         screen.blit(background, [0, 0])
 
-        tickets = open("tickets.txt", "r")
-        tickets = tickets.read()
-
-        titleText = pygame.font.SysFont('Showcard Gothic', 30)
-
-        ticks = titleText.render(tickets, True, white)
-        ticklabel = titleText.render("Tickets", True, white)
-
-        pygame.draw.line(screen, red, [660, 0], [660, 93], 7)
-        pygame.draw.line(screen, red, [660, 90], [800, 90], 7)
-
-        screen.blit(ticks, [707, 50])
-        screen.blit(ticklabel, [670, 10])
-
         building1img = pygame.image.load("buildingrps.png").convert()
         building1 = pygame.transform.scale(building1img, (120, 260))
 
@@ -52,6 +38,75 @@ class gameScreen:
         screen.blit(building1, [90, 196])
         screen.blit(building2, [250, 156])
         screen.blit(building3, [420, 230])
+
+        ticketFile = open("tickets.txt", "r")
+        tickets = ticketFile.read()
+
+        titleText = pygame.font.SysFont('Showcard Gothic', 30)
+        subText = pygame.font.SysFont('Showcard Gothic', 15)
+
+        ticks = titleText.render(tickets, True, white)
+        ticklabel = titleText.render("Tickets", True, white)
+
+        pygame.draw.line(screen, red, [660, 0], [660, 93], 7)
+        pygame.draw.line(screen, red, [660, 90], [800, 90], 7)
+
+        screen.blit(ticks, [707, 50])
+        screen.blit(ticklabel, [670, 10])
+
+        if int(tickets) == 0:
+            captionImg = pygame.image.load("caption.png").convert()
+            caption = pygame.transform.scale(captionImg, (500, 70))
+            instructgirlimg = pygame.image.load("instructgirl.png").convert()
+            instructgirl = pygame.transform.scale(instructgirlimg, (80, 80))
+            instructgirl.set_colorkey(black)
+
+            screen.blit(instructgirl, [-10, -10])
+            screen.blit(caption, [0, 65])
+            pygame.draw.rect(screen, white, (25, 75, 430, 50))
+
+            captionText = subText.render("Start playing!  Remember, to unlock Higher or Lower,", True, black)
+            captionText2 = subText.render("you need 300 tickets!", True, black)
+            screen.blit(captionText, [25, 75])
+            screen.blit(captionText2, [25, 90])
+
+        elif 0 < int(tickets) < 200:
+            captionImg = pygame.image.load("caption.png").convert()
+            caption = pygame.transform.scale(captionImg, (500, 70))
+            instructgirlimg = pygame.image.load("instructgirl.png").convert()
+            instructgirl = pygame.transform.scale(instructgirlimg, (80, 80))
+            instructgirl.set_colorkey(black)
+
+            screen.blit(instructgirl, [-10, -10])
+            screen.blit(caption, [0, 65])
+            pygame.draw.rect(screen, white, (25, 75, 430, 50))
+
+            remainingTicks = str(300 - int(tickets))
+
+            captionText = subText.render(("Keep playing!  You still need " + remainingTicks + " more tickets to"), True, black)
+            captionText2 = subText.render("unlock Higher or Lower.", True, black)
+            screen.blit(captionText, [25, 75])
+            screen.blit(captionText2, [25, 90])
+
+        elif 200 <= int(tickets) < 300:
+            captionImg = pygame.image.load("caption.png").convert()
+            caption = pygame.transform.scale(captionImg, (500, 70))
+            instructgirlimg = pygame.image.load("instructgirl.png").convert()
+            instructgirl = pygame.transform.scale(instructgirlimg, (80, 80))
+            instructgirl.set_colorkey(black)
+
+            screen.blit(instructgirl, [-10, -10])
+            screen.blit(caption, [0, 65])
+            pygame.draw.rect(screen, white, (25, 75, 430, 50))
+
+            remainingTicks = str(300 - int(tickets))
+
+            captionText = subText.render(("You're almost there!  You're just " + remainingTicks + " tickets away"), True, black)
+            captionText2 = subText.render("from unlocking Higher or Lower!", True, black)
+            screen.blit(captionText, [25, 75])
+            screen.blit(captionText2, [25, 90])
+
+        ticketFile.close()
 
         pygame.display.update()
 
