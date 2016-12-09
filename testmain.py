@@ -54,6 +54,7 @@ def main():
     var5 = True
     higher_lower = False
     isRPS = False
+    isPaint = False
 
     done = False
     while not done:
@@ -83,6 +84,12 @@ def main():
                     var2 = False
                     var3 = True
                     isRPS = True
+                    rockPaperScissors()
+
+                elif 510 > mouse[0] > 400 and 455 > mouse[1] > 205 and not instructions_screen and var2 and not isPaint:
+                    var2 = False
+                    var3 = True
+                    isPaint = True
                     paint()
 
                 #Creates a button that returns you to the game screen when clicked
