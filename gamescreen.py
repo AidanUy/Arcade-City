@@ -45,8 +45,12 @@ class gameScreen:
         building2img = pygame.image.load("buildinghl.png").convert()
         building2 = pygame.transform.scale(building2img, (110, 250))
 
+        building3img = pygame.image.load("buildingpaint.png").convert()
+        building3 = pygame.transform.scale(building3img, (110, 250))
+
         screen.blit(building1, [100, 205])
         screen.blit(building2, [250, 205])
+        screen.blit(building3, [400, 205])
 
         pygame.display.update()
 
