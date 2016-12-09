@@ -35,10 +35,10 @@ class instructionScreen:
         subText = pygame.font.SysFont('Showcard Gothic', 25)
 
         text = titleText.render("Instructions", True, white)
-        captionText = subText.render("Hey! Welcome to Arcade City! Start by walking up", True, black)
-        captionText2 = subText.render("to and playing Higher or Lower and racking up", True, black)
-        captionText3 = subText.render("tickets. Then, when you get enough tickets,", True, black)
-        captionText4 = subText.render("different games will be unlocked. Have fun!", True, black)
+        captionText = subText.render("Hey! Welcome to Arcade City! Start by clicking the", True, black)
+        captionText2 = subText.render("first building to play RPS and rack up", True, black)
+        captionText3 = subText.render("tickets. Then, when you get 300 tickets,", True, black)
+        captionText4 = subText.render("the second building is unlocked. Have fun!", True, black)
 
         screen.blit(text, [200, 80])
 
