@@ -29,7 +29,7 @@ class higherOrLowerHigher:
         instructgirlimg = pygame.image.load("instructgirl.png").convert()
         instructgirl = pygame.transform.scale(instructgirlimg, (200, 200))
         instructgirl.set_colorkey(black)
-        screen.blit(instructgirl, [70, 110])
+        screen.blit(instructgirl, [70, 90])
 
         newNum = random.randrange(30)
 
@@ -43,7 +43,7 @@ class higherOrLowerHigher:
         screen.blit(caption, [3, 280])
         pygame.draw.rect(screen, white, (45, 300, 670, 110))
 
-        backButton = button(screen, blue, bright_blue, 330, 475, 150, 50)
+        backButton = button(screen, blue, 330, 475, 150, 50)
 
         backText = buttonText.render("Back", True, white)
         screen.blit(backText, [365, 485])

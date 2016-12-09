@@ -29,7 +29,7 @@ class higherOrLowerLower:
         instructgirlimg = pygame.image.load("instructgirl.png").convert()
         instructgirl = pygame.transform.scale(instructgirlimg, (200, 200))
         instructgirl.set_colorkey(black)
-        screen.blit(instructgirl, [70, 110])
+        screen.blit(instructgirl, [70, 90])
 
         newNum = random.randrange(30)
 
