@@ -1,4 +1,4 @@
-import pygame, os, sys, random
+import pygame, os, sys
 from buttonclass import button
 pygame.init()
 
@@ -38,7 +38,7 @@ class instructionScreen:
         captionText = subText.render("Hey! Welcome to Arcade City! Start by clicking the", True, black)
         captionText2 = subText.render("first building to play Rock, Paper, Scissors and", True, black)
         captionText3 = subText.render("rack up tickets. Then, when you get 300 tickets,", True, black)
-        captionText4 = subText.render("the second building is unlocked. Have fun!", True, black)
+        captionText4 = subText.render("Higher or Lower is unlocked. Have fun!", True, black)
 
         screen.blit(text, [200, 80])
 

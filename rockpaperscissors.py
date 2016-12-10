@@ -23,12 +23,15 @@ class rockPaperScissors:
 
         clock = pygame.time.Clock()
 
+        background = pygame.image.load("rockpaperscissorsbg.png").convert()
+        screen.blit(background, [0, 0])
+
         subText = pygame.font.SysFont('Showcard Gothic', 50)
         smallText = pygame.font.SysFont('Showcard Gothic', 20)
         midText = pygame.font.SysFont('Showcard Gothic', 30)
 
-        names = subText.render("Rock, Paper, or Scissors?", True, white)
-        screen.blit(names, [80, 100])
+        title = subText.render("Rock, Paper, or Scissors?", True, blue)
+        screen.blit(title, [80, 100])
 
         rockButton = button(screen, green, 130, 450, 150, 50)
         paperButton = button(screen, green, 330, 450, 150, 50)

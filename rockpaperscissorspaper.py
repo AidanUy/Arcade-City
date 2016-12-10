@@ -23,6 +23,9 @@ class rockPaperScissorsPaper:
 
         clock = pygame.time.Clock()
 
+        background = pygame.image.load("rockpaperscissorsbg.png").convert()
+        screen.blit(background, [0, 0])
+
         from random import randint
 
         t = ["Rock", "Paper", "Scissors"]
@@ -35,10 +38,10 @@ class rockPaperScissorsPaper:
 
         player = "Paper"
         if computer == "Paper":
-            cs = midText.render("Tie!", True, white)
+            cs = midText.render("Tie!", True, blue)
             screen.blit(cs, [385, 260])
         if computer == "Scissors":
-            cs = midText.render("You lose! Scissors cuts paper.", True, white)
+            cs = midText.render("You lose! Scissors cuts paper.", True, blue)
             screen.blit(cs, [165, 260])
             tickLose = -10
             ticketFile = open("tickets.txt", "r")
@@ -53,7 +56,7 @@ class rockPaperScissorsPaper:
             ticketUpdate.write(str(tickets))
             ticketUpdate.close()
         if computer == "Rock":
-            cs = midText.render("You win! Paper covers rock.", True, white)
+            cs = midText.render("You win! Paper covers rock.", True, blue)
             screen.blit(cs, [165, 260])
             tickWin = 30
             ticketFile = open("tickets.txt", "r")

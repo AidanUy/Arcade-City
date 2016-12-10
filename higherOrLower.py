@@ -1,4 +1,4 @@
-import pygame, os, sys, random
+import pygame, os, sys
 from buttonclass import button
 pygame.init()
 
@@ -35,8 +35,8 @@ class higherOrLower:
         subText = pygame.font.SysFont('Showcard Gothic', 25)
         buttonText = pygame.font.SysFont('Showcard Gothic', 30)
 
-        text = titleText.render("Higher or Lower", True, white)
-        screen.blit(text, [140, 50])
+        title = titleText.render("Higher or Lower", True, white)
+        screen.blit(title, [140, 50])
 
         screen.blit(caption, [3, 280])
         pygame.draw.rect(screen, white, (45, 300, 670, 110))
