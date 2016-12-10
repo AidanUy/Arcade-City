@@ -48,7 +48,7 @@ class higherOrLowerLower:
         backText = buttonText.render("Back", True, white)
         screen.blit(backText, [365, 485])
 
-        winText = subText.render(("Correct!  The number was " + str(newNum) + ". Here are your tickets."),True, black)
+        winText = subText.render(("Correct!  The number was " + str(newNum) + ".  Here are your tickets."),True, black)
         loseText = subText.render(("You lost.  The number was " + str(newNum) + ". Try again later!"), True, black)
 
         if newNum <= currentNum:
