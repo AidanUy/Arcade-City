@@ -23,7 +23,7 @@ class higherOrLowerHigher:
 
         clock = pygame.time.Clock()
 
-        background = pygame.image.load("bggamescreen.png").convert()
+        background = pygame.image.load("mainscreen.png").convert()
         screen.blit(background, [0, 0])
         caption = pygame.image.load("caption.png").convert()
         instructgirlimg = pygame.image.load("instructgirl.png").convert()
